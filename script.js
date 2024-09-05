@@ -110,6 +110,10 @@ function calcularPace(){
     min += (hor*60)
     seg += (Math.abs(min)-Math.floor(min))*60
 
+    if (seg >= 60){
+        min += (seg/60)
+        seg = (Math.abs(min)-Math.floor(min))*60
+    }
     pace = [Math.floor(min), Math.floor(seg)]
     res2.innerHTML = `Pace: ${pace[0]}:${pace[1]} min/km`
 }
