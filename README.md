@@ -1,2 +1,3 @@
 # Calculadora de Pace
- calculadora de pace feita em HTML, CSS e JavaScript
+ Calculadora de pace feita em HTML, CSS e JavaScript \
+ [Clique Aqui Para ver o resultado](https://renanoliveira1221.github.io/Calculadora-de-Pace)
