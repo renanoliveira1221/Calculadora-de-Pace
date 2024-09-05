@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora de Pace</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <form>
+            <div id="h1div">
+                <h1>Calcular <span id="h1main"></span></h1>
+            </div>
+            <div id="div_vel">
+                <input type="radio" name="rad" id="rad_vel" onclick="executar()">
+                <label for="rad_vel">Velocidade</label>
+                <input type="number" name="input_vel" id="input_vel" min="0" placeholder="km/h " disabled>
+            </div>
+            <div id="div_dis">
+                <input type="radio" name="rad" id="rad_dis" onclick="executar()">
+                <label for="rad_dis">Distância</label>
+                <input type="number" name="input_dis" id="input_dis" min="0" placeholder="m " disabled>
+            </div>
+            <div id="div_tem">
+                <input type="radio" name="rad" id="rad_tem" onclick="executar()">
+                <label for="rad_tem">Tempo</label>
+                <span>
+                    <input type="number" name="input_h" id="input_h" class="input_tempo" placeholder="h " min="0" disabled>
+                    <input type="number" name="input_min" id="input_min" class="input_tempo" placeholder="min " min="0" max="59" disabled>
+                    <input type="number" name="input_sec" id="input_sec" class="input_tempo" placeholder="s " min="0" disabled>
+                <span>
+            </div>
+            <div id="div_calcular">
+                <input type="button" value="Calcular" id="calcular" onclick="click_calcular()" disabled>
+            </div>
+            <div>
+                <p id="res1"></p>
+            </div>
+            <div>
+                <p id="res2"></p>
+            </div>
+        </form>
+    </main>
+    <script src="script.js"></script>
+    <footer>
+        <p>Desenvolvido por <a href="https://github.com/renanoliveira1221" target="_blank" rel="external">Renan Melo de Oliveira</a></p>
+    </footer>
+</body>
+</html>
