@@ -1,14 +1,14 @@
 rad = document.getElementsByName("rad")
 input_vel = document.getElementById("input_vel")
 input_dis = document.getElementById("input_dis")
-input_tem = document.getElementsByClassName("input_tempo")
-h1main = document.getElementById("h1main")
+input_tem = document.getElementsByClassName("input_tem")
+h1main = document.getElementById("h1_form")
 calcular = document.getElementById("calcular")
 res1 = document.getElementById("res1")
 res2 = document.getElementById("res2")
 
 
-function executar(){
+function selecionar(){
     if (rad[0].checked) {
         input_vel.setAttribute("disabled", "")
         input_vel.value = ""
@@ -16,7 +16,7 @@ function executar(){
         input_tem[0].removeAttribute("disabled")
         input_tem[1].removeAttribute("disabled")
         input_tem[2].removeAttribute("disabled")
-        h1main.innerHTML = "Velocidade"
+        h1main.innerHTML = "Calcular Velocidade"
         calcular.removeAttribute("disabled")
     } else if (rad[1].checked) {
         input_dis.setAttribute("disabled", "")
@@ -25,7 +25,7 @@ function executar(){
         input_tem[0].removeAttribute("disabled")
         input_tem[1].removeAttribute("disabled")
         input_tem[2].removeAttribute("disabled")
-        h1main.innerHTML = "Distância"
+        h1main.innerHTML = "Calcular Distância"
         calcular.removeAttribute("disabled")
     } else if (rad[2].checked) {
         input_tem[0].setAttribute("disabled", "")
@@ -36,7 +36,7 @@ function executar(){
         input_tem[2].value = ""
         input_vel.removeAttribute("disabled")
         input_dis.removeAttribute("disabled")
-        h1main.innerHTML = "Tempo"
+        h1main.innerHTML = "Calcular Tempo"
         calcular.removeAttribute("disabled")
     }
 
@@ -100,8 +100,6 @@ function calcularPace(){
         var seg = tempo[2]
     }
 
-    
-
     distancia /= 1000
     hor /= distancia
     min /= distancia
@@ -115,7 +113,7 @@ function calcularPace(){
         seg = (Math.abs(min)-Math.floor(min))*60
     }
     pace = [Math.floor(min), Math.floor(seg)]
-    res2.innerHTML = `Pace: ${pace[0]}:${pace[1]} min/km`
+    res2.innerHTML = `<abbr title="Ritimo">Pace</abbr>: ${pace[0]}:${pace[1]} min/km`
 }
 
 
@@ -125,7 +123,7 @@ function click_calcular(){
             alert("[Erro] Preencha os dados!")
         } else {
             var velocidade = calcularVelocidade()
-            res1.innerHTML = `Velocidade: ${velocidade.toFixed(2)}km/h`
+            res1.innerHTML = `Velocidade: ${velocidade.toFixed(2)} km/h`
             calcularPace()
             //velocidade
         }
@@ -134,7 +132,7 @@ function click_calcular(){
             alert("[Erro] Preencha os dados!")
         } else {
             var distancia = calcularDistancia()
-            res1.innerHTML = `Distância: ${distancia}m`
+            res1.innerHTML = `Distância: ${distancia} m`
             calcularPace()
             //distancia
         }
